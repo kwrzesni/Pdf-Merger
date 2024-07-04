@@ -7,6 +7,7 @@ import os
 from tkinter import ttk
 from threading import Thread
 import time
+from tkinter import messagebox
 
 
 def extract_number(value):
@@ -141,8 +142,9 @@ def merge_pdf():
             image = resize_image_center(image)
             add_image(pdf_writer, image)
             set_progress(int((i + 1) / (len(files)) * 100))
-    except:
-        raise
+    except Exception as e:
+        messagebox.showerror(title=str(type(e)), message=str(e.args))
+        set_progress(0)
     if os.path.exists(TEMP_FILE_NAME):
         os.remove(TEMP_FILE_NAME)
     if pdf_merging_ongoing:

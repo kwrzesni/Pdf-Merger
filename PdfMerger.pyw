@@ -130,6 +130,9 @@ def merge_pdf():
     output_button.config(state=tk.DISABLED)
     sort_by_number_button.config(state=tk.DISABLED)
     sort_alphabetically_button.config(state=tk.DISABLED)
+    up_button.config(state=tk.DISABLED)
+    down_button.config(state=tk.DISABLED)
+    delete_button.config(state=tk.DISABLED)
     set_progress(0)
     pdf_writer = PdfWriter()
     try:
@@ -155,6 +158,9 @@ def merge_pdf():
     output_button.config(state=tk.NORMAL)
     sort_by_number_button.config(state=tk.NORMAL)
     sort_alphabetically_button.config(state=tk.NORMAL)
+    up_button.config(state=tk.NORMAL)
+    down_button.config(state=tk.NORMAL)
+    delete_button.config(state=tk.NORMAL)
     start_button.config(text='start')
     pdf_merging_ongoing = False
     thread = None

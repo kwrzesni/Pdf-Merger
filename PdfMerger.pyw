@@ -148,6 +148,7 @@ def merge_pdf():
     except Exception as e:
         messagebox.showerror(title=str(type(e)), message=str(e.args))
         set_progress(0)
+        pdf_merging_ongoing = False
     if os.path.exists(TEMP_FILE_NAME):
         os.remove(TEMP_FILE_NAME)
     if pdf_merging_ongoing:
